@@ -1,0 +1,52 @@
+﻿@model UserRegistration;
+@{
+    ViewData["Title"] = "Register Page";
+}
+  
+<!-- card ui -->
+<div class="con body text-center d-flex justify-content-center">
+  <div class="cards">
+    <div class="about">
+      <h1 class="title">Sign up</h1>
+    </div>
+    <form autocomplete="off" class=""  method="post" asp-action="Register">
+
+
+      <div class="">
+<!--         <i class="fa fa-envelope-o" aria-hidden="true"></i> -->
+        <input asp-for="FirstName" type="text" placeholder="First Name" /><br />
+          <span asp-validation-for="FirstName" style="color:red" ></span>
+
+        <input  asp-for="LastName"  type="text" placeholder="Last Name"/><br />
+            <span asp-validation-for="LastName" style="color:red" ></span>
+
+        <input asp-for="Email"  type="text" placeholder="Email" /><br />
+         <span asp-validation-for="Email" style="color:red" ></span>
+
+        <input asp-for="Password"  type="password" placeholder="Password" /><br />
+            <span asp-validation-for="Password" style="color:red" ></span>
+
+        <input asp-for="RetypePassword"  type="password" placeholder="Confirm Password" /><br />
+            <span asp-validation-for="RetypePassword" style="color:red font-size: 3px" ></span>
+      </div>
+      
+      <!--       terms -->
+      <div class="terms">
+      <input type="checkbox" id="signing" name="signing"> 
+<label for="signing"><p>i agree with <i>terms and conditions</i></p></label> 
+      </div>
+      
+      
+
+    <button class="submit btn-lg btn-success" >SIGN UP</button>
+
+      <div class="login">
+<!--       Already a member -->
+      <label id="login" for="login"><p> Already a member! <span> <a asp-action="Login" asp-controller="Authentication"  >Login</a> </span></p></label> 
+        </div>
+      </form>
+    
+    
+    
+  </div>
+  </div>

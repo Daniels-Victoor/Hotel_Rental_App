@@ -1,0 +1,193 @@
+﻿@model IEnumerable<HotelLandPageDto>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+    	<main class="">
+            <section class="main-first-div d-flex">
+
+
+                <div class="">
+                        <div class="forget-busy-work">
+                                <h1 class=""> Forget Busy Work,<br> Start Next Vacation </h1>
+                            </div>
+                                <div class="we-provide">
+                                    We provide what you need to enjoy your 
+                                    holiday with family. Time to make another 
+                                    memorable moments.<br>
+                                    <button class="button-firts-section">  Show Me Now </button>
+                                </div>
+                              
+                            <div>
+                                <div class="display-flex icon-group">
+                                    <div class="">
+                                        <img src="./Image folder/icon1.svg" alt="" class="img-fluid">
+                                        <p>80,409 <span class="item-3-b">travelers</span></p>
+                                    </div>
+                                    <div class="">
+                                        <img src="./Image folder/icon2.svg" alt="" class="img-fluid">
+                                        <p>862 <span class="item-3-b">treasure</span> </p>
+                                    </div>
+                                    <div class="">
+                                        <img src="./Image folder/icon3.svg" alt="" class="img-fluid">
+                                    <p>1,492 <span class="item-3-b"> cities</span></p>
+                                    </div>
+                                </div>
+                        </div>
+                </div>
+
+                 <div class=""> 
+                    <img alt="" src="./Image folder/image1.png" class="img-pr img-fluid"/>  
+                </div>
+
+            </section>
+<section class="second-sections">
+    <h3 class="most-picked">Most Picked</h3>
+
+      <div class="d-flex">
+           @foreach(var hotel in Model)
+            {
+              
+                @if(hotel.Catergory == "Most Pick")
+                {  
+                    
+                    <div class=""> 
+                          
+                     <a asp-controller="Home" asp-action="Details" asp-route-Id="@hotel.HotelId">  <img src="@hotel.Image[0]" alt="" class="section-2-img margin-1 second--flex__left "></a>
+          
+                    <p class="__@hotel.HotelId  pink"> $@hotel.Price per night</p>
+                     <p class=" bottom-left _@hotel.HotelId">@hotel.Name <br /> <span class="bottom-left-b ">@hotel.Location</span></p>  
+                </div>
+                    
+                }
+                }
+
+                  <div class="Images__grid">
+            @foreach(var hotel in Model)
+            {
+               
+
+                @if (hotel.Catergory == "Most Picked")
+                {
+                    <div class="Images__grid"> 
+                         <a asp-controller="Home" asp-action="Details" asp-route-Id="@hotel.HotelId"><img src="@hotel.Image[0]" alt="" class="section-2-img margin-1 second--flex__left "></a>
+                     
+            <p class="__@hotel.HotelId pink"> $@hotel.Price per night</p>
+             <p class="bottom-left _@hotel.HotelId" id="">@hotel.Name <br /> <span class="bottom-left-b ">@hotel.Location</span></p>  
+
+                </div>
+                }
+            }
+            </div>
+         </div>
+</section>
+<section class="third-section">
+    <div class="item2"><h2 class="item-4 ">Houses with beauty backyard </h2></div>
+    <div class="d-flex justify third-section-main ">
+        @foreach(var hotel in Model)
+        {
+            if(hotel.Catergory == "Houses with beauty backyard")
+            {
+                 <div>  
+                      <a asp-controller="Home" asp-action="Details" asp-route-Id="@hotel.HotelId"><img src="@hotel.Image[0]" alt="" class="img-fluid"></a>
+
+                        @if(hotel.IsPopular == true)
+                        {
+                           <p class="pink-bar5 pink">Popular Choice</p> 
+                        }
+                
+                <div class="item3">
+                      <p class="item-3-a">@hotel.Name</p>
+                <p class="item-3-b">@hotel.Location</p>
+        
+                </div>
+             </div>
+
+            }
+        }
+
+      </div>
+
+</section>
+
+<section class="fourth-section">
+<div class="item2"><h2 class="item-4 ">Hotels with large living room</h2></div>
+<div class="display-flex justify third-section-main ">
+    @foreach(var hotel in Model)
+            {
+                @if(hotel.Catergory=="Hotels with large living room")
+                {
+                    
+                 <div>  
+                      <a asp-controller="Home" asp-action="Details" asp-route-Id="@hotel.HotelId">   <img src="@hotel.Image[0]" alt="" class="img-fluid"></a>
+             
+                        @if(hotel.IsPopular == true)
+                        {
+                           <p class="pink-bar6 pink">Popular Choice</p> 
+                        }
+                
+                <div class="item3">
+                      <p class="item-3-a">@hotel.Name</p>
+                <p class="item-3-b">@hotel.Location</p>
+        
+                </div>
+             </div>
+                }
+            }
+           
+</div>
+</section>
+
+<section class=" container">
+<div class="mb-4"><h2 class="item-4 ">Apartments with kitchen set</h2></div>
+
+        <div class="display-flex justify ">
+            @foreach(var hotel in Model)
+        {
+            if(hotel.Catergory=="Apartments with kitchen set")
+            {
+                
+                 <div>  
+                      <a asp-controller="Home" asp-action="Details" asp-route-Id="@hotel.HotelId"> <img src="@hotel.Image[0]" alt="" class="img-fluid"></a>
+               
+                        @if(hotel.IsPopular == true)
+                        {
+                           <p class="pink-bar7 pink">Popular Choice</p> 
+                        }
+                
+                <div class="item3">
+                      <p class="item-3-a">@hotel.Name</p>
+                <p class="item-3-b">@hotel.Location</p>
+        
+                </div>
+             </div>
+            }
+        }
+<div> 
+    </div>
+    </div>
+</section>
+<section class="sixth-section main-first-div">
+<div class="display-flex ">
+    <div class="happy-family-div"> <div><img src="./Image folder/Happy_Family.png" alt="" class="happy-family mx-5 img-fluid"></div> </div>
+    <div>
+        <h3 class="happy-family-header">Happy Family</h3>
+    <div class="display-flex ">
+        <div ><img src="./Image folder/Star 1.svg" alt="" class="img-fluid"></div>
+        <div>  <img src="./Image folder/Star 1.svg" alt="" class="img-fluid"></div>
+        <div>  <img src="./Image folder/Star 1.svg" alt="" class="img-fluid"></div>
+        <div>  <img src="./Image folder/Star 1.svg" alt="" class="img-fluid"></div>
+        <div>  <img src="./Image folder/Star 1.svg" alt="" class="img-fluid"></div>
+    
+    </div>
+    <p class="happy-family-pa">What a great trip with my family and <br />
+        I should try again next time soon ...</p>
+        <p class="item-3-b">Angga, Product Designer</p>
+        <button class="happy-family-button">Read Their Story</button>
+    </div>
+</div>
+</section>
+</main>
+
+
+

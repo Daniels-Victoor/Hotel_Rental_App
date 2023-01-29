@@ -1,0 +1,167 @@
+﻿@model HotelDetailsDto
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div d-flex >
+    <p> <a asp-controller="Home" asp-action="Index">Home</a> / <span><a  asp-controller="Home" asp-action="Details" asp-route-Id="@Model.HotelId">House Details</a> </span></p>
+   
+    <h1 class="text-center text-primary font-weight-bold text-you3">@Model.Name</h1>
+    <p class="text-center text-you4">@Model.Location</p>
+</div>
+<section class="first-section">
+    <div class="d-flex ">
+ 
+           <div><img  src="@Model.Image[2]" class="detail-image-1 px-4 pt-2"/></div>  
+         <div class="">
+          <div>  <div><img src="@Model.Image[1]" class="detail-image-2 pb-4"/></div></div>
+          <div>  <div><img src="@Model.Image[0]" class="detail-image-2"/></div></div>
+         </div>
+    </div>
+
+</section>
+<section class="section-second">
+    <div class="d-flex py-5 my-3">
+        <div>
+            <h4 class="text-you">About the place</h4>
+            <div class="">
+                <p class="text-justify text-you2">@Model.Description</p>
+
+            </div>
+            <div class="d-flex text-center justify-content-between ">
+                <div>
+                    <img src="~/Image folder/bed.svg.svg"/>
+                    <p>@Model.Bedroom bedroom</p>
+                    </div>
+                    <div>
+                    <img src="~/Image folder/ic_livingroom.svg"/>
+                    <p>@Model.Livingroom living room</p>
+                    </div>
+                    <div>
+                    <img src="~/Image folder/ic_bedroom (1).svg"/>
+                    <p>@Model.Bathroom bathroom</p>
+                    </div>
+                    <div>
+                    <img src="~/Image folder/ic_diningroom 1.svg"/>
+                    <p>@Model.Diningroom dining room</p>
+                    </div>
+                <div></div>
+            </div>
+             <div class="d-flex text-center justify-content-between ">
+                <div>
+                    <img src="~/Image folder/ic_wifi 1.svg"/>
+                    <p>@Model.Mb mbp/s</p>
+                    </div>
+                    <div>
+                    <img src="~/Image folder/ic_ac 1.svg"/>
+                    <p>@Model.Unitready unit ready</p>
+                    </div>
+                    <div>
+                    <img src="~/Image folder/ic_kulkas.svg"/>
+                    <p>@Model.Refrigator refigrator</p>
+                    </div>
+                    <div>
+                    <img src="~/Image folder/ic_tv.svg"/>
+                    <p>@Model.Television television</p>
+                    </div>
+                <div></div>
+            </div>
+        </div>
+        <div class="p-5">
+        <div class="card m-auto" style="width:30rem">
+  <div class="card-body m-auto">
+    <h5 class="text-left start-booking">Start Booking</h5>
+
+    <h6 class="card-subtitle mb-2 text-muted price-text">$<span class="price-text1 n1" id="price">@Model.Price </span>per night</h6>
+    <p>How long you will stay?</p>
+ <div class="number d-flex">
+	<span class="minus span">-</span>
+	<input class="inputss n2" id="input" value="1"/>
+	<span class="plus span">+</span>
+</div>
+    <div>
+        <p>Pick a Date</p>
+      
+
+       
+	
+
+
+
+        <p class="n3">You will pay <span class="start-booking">$<span id="priceDisplay">@Model.Price</span>USD</span>  per <span class="start-booking"> <span id="night"> 1 </span> night(s)</span> </p>
+      
+  <button type="button" class="btn btn-primary btn-lg m-auto">Continue to Book</button>
+    
+</div>
+
+    </div>
+          </div>
+        </div>
+    </div>
+
+</section>
+<section class=" container">
+<div class="mb-4"><h2 class="item-4 ">Treasure to Choose</h2></div>
+
+        <div class="display-flex justify ">
+         
+                 <div>  
+                <img src="~/Image folder/4.png" alt="" class="img-fluid">
+                           <p class="pink-bar7 pink">Popular Choice</p> 
+                <div class="item3">
+                      <p class="item-3-a">Green Lake</p>
+                <p class="item-3-b">Nature</p>
+        
+                </div>
+             </div>
+             <div>  
+                <img src="~/Image folder/3.png" alt="" class="img-fluid">
+                <div class="item3">
+                      <p class="item-3-a">Green Lake</p>
+                <p class="item-3-b">Nature</p>
+        
+                </div>
+             </div>
+             <div>  
+                <img src="~/Image folder/2.png" alt="" class="img-fluid">
+                <div class="item3">
+                      <p class="item-3-a">Green Lake</p>
+                <p class="item-3-b">Nature</p>
+        
+                </div>
+             </div>
+             <div>  
+                <img src="~/Image folder/1.png" alt="" class="img-fluid">
+                <div class="item3">
+                      <p class="item-3-a">Green Lake</p>
+                <p class="item-3-b">Nature</p>
+        
+                </div>
+             </div>
+       
+    <div> 
+    </div>
+    </div>
+
+</section>
+<section class="sixth-section main-first-div">
+<div class="display-flex ">
+    <div class="happy-family-div"> <div><img src="~/Image folder/image 3.png" alt="" class="happy-family mx-5 img-fluid"></div> </div>
+    <div>
+        <h3 class="happy-family-header">Happy Family</h3>
+    <div class="display-flex ">
+        <div ><img src="~/Image folder/Star 1.svg" alt="" class="img-fluid"></div>
+       <div ><img src="~/Image folder/Star 1.svg" alt="" class="img-fluid"></div>
+      <div ><img src="~/Image folder/Star 1.svg" alt="" class="img-fluid"></div>
+       <div ><img src="~/Image folder/Star 1.svg" alt="" class="img-fluid"></div>
+        <div ><img src="~/Image folder/Star 1.svg" alt="" class="img-fluid"></div>
+    
+    </div>
+    <p class="happy-family-pa">What a great trip with my family and <br />
+        I should try again next time soon ...</p>
+        <p class="item-3-b">Angga, Product Designer</p>
+        <button class="happy-family-button">Read Their Story</button>
+    </div>
+</div>
+</section>
+

@@ -1,0 +1,154 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Staycation</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+      <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css">
+      <link rel="stylesheet" href="~/font-awesome/css/all.css">
+      <link rel="stylesheet" href="~/favicon.ico">
+</head>
+<body>
+    <header>
+       
+        <nav class=" navdisplay navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+         
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img id="img_logo" alt="Logo" src="~/Image folder/Staycation..png" /></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse  collapse d-sm-inline-flex flex-sm-row-reverse text-center">
+                    <ul class="navbar-nav flex-grow-1 ">
+                        <li class="nav-item">
+                            <a class="nav-link nav-text" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-text " asp-area="" asp-controller="Home" asp-action="">Browse by</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link nav-text" asp-area="" asp-controller="Home" asp-action="">Stories</a>
+                        </li>
+                        @if (ViewBag.message != null)
+                        {
+                            <li class="nav-item">
+                            <a class="nav-link nav-text " asp-area="" asp-controller="Authentication" asp-action="Logout">Log Out</a>
+                        </li> 
+                        }
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+         <div class=" border-bottom">
+                <div class="d-flex justify-content-end p-3"> 
+                 @if(ViewBag.message == null)
+                {
+                    <button style="padding:10px 30px;border-radius:4px;border:none;cursor:pointer;background:dodgerblue"><a asp-controller="Authentication" asp-action="Register" style="color:white;text-decoration:none;font-weight:600;"><span class="fa fa-user"></span>Register</a></button>
+                    <button  class="mx-4" style="padding:10px 30px;border-radius:4px;border:none;cursor:pointer"><a asp-controller="Authentication" asp-action="Login" style="color:dodgerblue;text-decoration:none;font-weight:600;"><span class="fa fa-sign-in"></span>Login in</a></button>
+                }
+                @if(ViewBag.message == null){
+                    <span style="padding:10px 30px;border-radius:4px;border: 4px ;cursor:pointer;"><i class="fa fa-user"></i>
+                        My Profile
+                    </span>
+                }else{
+                    <div style="padding:10px 30px;border-radius:4px; cursor:pointer;"> <span><i class="fa fa-user"></i>
+                        Welcome @ViewBag.userEmail!!
+                    </span></div>
+                   
+                }
+                </div>
+
+        </div>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top  text-muted">
+        <div class="container">
+
+            <div class="footer-main-div ">
+                <div class="footer-first-div ">
+                    <div><img id="img_logo" alt="Logo" src="~/Image folder/Staycation..png" /></div>
+                    <div><p>We kaboom your beauty holiday <br />instantly and memorable.</p></div>
+                </div>
+                    
+                    <div class="footer-second-div">
+
+                          <div><h2>For Beginners</h2></div>
+                            <div>
+                                 <ul class=" ">
+                                    <li class="">
+                                        <a class="text-dark" asp-action="Register" asp-controller="Authentication">New Account</a>
+                                    </li>
+                                    <li class="text-dark"  href="#">
+                                        <a class="text-dark"  href="#">Start Booking a Room</a>
+                                    </li>
+                                     <li class="text-dark">
+                                        <a class="text-dark"  href="#">Use Payments</a>
+                                    </li>
+                        
+                                </ul>
+
+                            </div>
+                    </div>
+               <div class="third -footer-div ">
+                
+                      <div><h2>Explore Us</h2></div>
+                        <div>
+                                <ul class="">
+                                    <li class="">
+                                        <a class="text-dark"  href="#">Our Careers</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="text-dark "  href="#">Privacy</a>
+                                    </li>
+                                     <li class="">
+                                        <a class="text-dark"  href="#">Terms & Conditions</a>
+                                    </li>
+                        
+                                </ul>
+
+                        </div>
+                  
+               </div>
+
+               <div class="foort-fourth-div ">
+                    <div><h2>Connect Us</h2></div>
+                        <div>
+                                <ul class=" ">
+                                    <li class="">
+                                        <a class="" >support@staycation.id</a>
+                                    </li>
+                                    <li class="">
+                                        <a class=" ">021 - 2208 - 1996</a>
+                                    </li>
+                                     <li class="">
+                                        <a class="">Staycation, Kemang, Jakarta</a>
+                                    </li>
+                        
+                                </ul>
+
+                        </div>
+
+               </div>
+         </div>
+    </div>
+              
+        <div class="container text-center">
+<p>&copy; @DateTime.Now.Year  • All rights reserved • Staycation</p><a asp-area="" asp-controller="Home" asp-action="Privacy"></a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
